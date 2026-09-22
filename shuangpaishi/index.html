@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双牌石-历史沿革、文化传说与旅游导览</title>
+    <meta name="description" content="双牌石专题网页，详细介绍双牌石的地理位置、历史渊源、民间传说、建筑特色及旅游攻略。提供双牌石周边景点推荐、交通指南与参观贴士，帮助游客深入了解这一著名地标的历史文化价值。">
+    <meta name="keywords" content="双牌石,历史古迹,旅游景点,民间传说,文化地标">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #8e44ad;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #732d91;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/stone/1600/900.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* History & Intro */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .intro-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Features Grid */
+        .features {
+            background-color: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Legend Section */
+        .legend-section {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .legend-section .section-header h2 {
+            color: #fff;
+        }
+
+        .legend-section .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .legend-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .legend-item {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .legend-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.1);
+            line-height: 1;
+            min-width: 80px;
+        }
+
+        .legend-text h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .legend-text p {
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        /* Tourism Info */
+        .tourism-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .sidebar-widget {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar-widget h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            display: none;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .intro-grid, .tourism-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legend-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">石</span>
+                双牌石
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#history" class="active">历史渊源</a></li>
+                    <li><a href="#culture">文化传说</a></li>
+                    <li><a href="#tourism">旅游指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#tourism" class="cta-btn">参观指南</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content container">
+                <h1>探寻双牌石</h1>
+                <p>承载千年历史记忆，见证风雨沧桑变迁。双牌石不仅是重要的地理地标，更是当地文化的精神图腾。</p>
+                <a href="#history" class="cta-btn" style="background: rgba(255,255,255,0.9); color: var(--primary-color);">深入了解</a>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section id="history" class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h3>历史沿革与地理概况</h3>
+                    <p>双牌石位于[具体行政区，如：某市某区]的[具体方位，如：山脚下/河流畔]，因其两块形状如牌匾的巨石并排而立而得名。据地方志记载，该地最早可追溯至[朝代名称]时期，当时即为周边百姓休憩与交流的重要场所。</p>
+                    <p>历经数百年的自然风化与人为建设，双牌石周围逐渐形成了独特的聚落形态。它不仅是当地的天然屏障，更是调节局部小气候的重要自然景观。如今，双牌石已从单纯的地理坐标演变为集历史文化、民俗风情于一体的综合性文化旅游景点。</p>
+                    <p>双牌石由两块高约[数字]米、宽约[数字]米的巨石组成，石质坚硬，纹理清晰。这两块巨石在地质学上具有极高的研究价值，是研究该地区地质变迁的活化石。</p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://picsum.photos/seed/stoneview/600/400.jpg" alt="双牌石远景">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心看点</h2>
+                    <p>为什么双牌石值得您专程前往？</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <h3>深厚历史底蕴</h3>
+                        <p>双牌石的历史可追溯至数百年前，见证了多个朝代的更迭，是研究地方历史文化的宝贵实物资料。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🪨</div>
+                        <h3>奇特地质构造</h3>
+                        <p>两块巨石形态奇特，石质坚硬，纹理自然，具有极高的地质观赏价值和科学考察意义。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📜</div>
+                        <h3>民间传说丰富</h3>
+                        <p>关于双牌石的形成，当地流传着许多优美的神话传说，为这片土地增添了浓厚的神秘色彩。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>绝佳摄影胜地</h3>
+                        <p>无论是清晨的薄雾还是黄昏的夕阳，双牌石都能呈现出不同的光影效果，是摄影爱好者的天堂。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legend Section -->
+        <section id="culture" class="legend-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>文化传说</h2>
+                    <p>流传百年的民间故事</p>
+                </div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <div class="legend-number">01</div>
+                        <div class="legend-text">
+                            <h4>双石镇妖</h4>
+                            <p>相传在很久以前，这里是一片汪洋，海中潜伏着一条恶龙，经常兴风作浪，危害百姓。一位得道高僧路过此地，用法力降服了恶龙，并将恶龙化作两块巨石镇压在海底。这两块巨石后来随着地壳运动浮出水面，形成了如今的“双牌石”。人们为了纪念高僧的功德，常在此烧香祈福。</p>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-number">02</div>
+                        <div class="legend-text">
+                            <h4>状元及第</h4>
+                            <p>另一则传说讲述了古代一位书生在此读书。他勤奋刻苦，感动了天上的文曲星。文曲星化作一块石牌掉落在他面前，书生得到石牌的指引，文思泉涌，最终金榜题名。这块石牌便被称为“双牌石”，寓意着“双喜临门”和“功成名就”。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tourism Section -->
+        <section id="tourism" class="container">
+            <div class="section-header">
+                <h2>旅游指南</h2>
+                <p>为您提供最实用的参观信息</p>
+            </div>
+            <div class="tourism-grid">
+                <div class="info-list">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>地理位置</h4>
+                            <p>双牌石位于[具体省/市/县/镇]的[具体街道或地标附近]。周边交通便利，可直达景区停车场。</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-content">
+                            <h4>开放时间</h4>
+                            <p>景区全年开放，每日开放时间为上午8:00至下午18:00。建议游览时长为2-3小时。</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🎫</div>
+                        <div class="info-content">
+                            <h4>门票信息</h4>
+                            <p>双牌石景区目前实行免费开放政策。如需参观内部展览馆或参加导游讲解服务，需在入口处登记或预约。</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🚗</div>
+                        <div class="info-content">
+                            <h4>交通方式</h4>
+                            <p>自驾游客可导航至“双牌石风景区”。公共交通可乘坐[具体线路]公交车，在[具体站点]下车步行即到。</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🍽️</div>
+                        <div class="info-content">
+                            <h4>周边美食</h4>
+                            <p>游览结束后，推荐品尝当地的特色美食，如[当地特色菜1]、[当地特色菜2]，这些小吃深受游客喜爱。</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="sidebar-widget">
+                    <h4>参观贴士</h4>
+                    <ul class="checklist">
+                        <li>最佳游览时间为春秋两季，气候宜人。</li>
+                        <li>请爱护文物，请勿在石壁上刻画涂鸦。</li>
+                        <li>建议穿着舒适的步行鞋，部分区域台阶较多。</li>
+                        <li>雨后山路湿滑，请注意防滑安全。</li>
+                        <li>景区内设有休息区和直饮水点。</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container faq-section">
+            <div class="section-header">
+                <h2>常见问题</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">双牌石适合带孩子去吗？</div>
+                <div class="faq-answer">
+                    双牌石环境开阔，适合全家出游。虽然部分路段有台阶，但整体难度不大。景区周边也有适合儿童的游乐设施和休息区，是周末亲子游的好去处。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">双牌石附近有住宿的地方吗？</div>
+                <div class="faq-answer">
+                    是的，双牌石周边分布有多家不同档次的酒店、民宿和农家乐。从经济型客栈到舒适型酒店均有选择，建议提前通过网络平台预订。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">除了参观石头，还有其他活动吗？</div>
+                <div class="faq-answer">
+                    除了观赏双牌石本体，游客还可以在周边的步道上散步、徒步，或者探访附近的古村落，体验当地的民俗文化。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">双牌石有什么特殊的节庆活动？</div>
+                <div class="faq-answer">
+                    每年的[农历日期]左右，当地会举办[具体节庆名称]活动，届时会有舞龙舞狮、民俗表演等传统节目，非常热闹。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>双牌石</h3>
+                    <p>致力于保护与传播双牌石的历史文化价值，为游客提供最优质的旅游信息服务。让更多人了解这片土地的过去与未来。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#history">历史沿革</a></li>
+                        <li><a href="#culture">文化传说</a></li>
+                        <li><a href="#tourism">旅游指南</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：010-12345678</li>
+                        <li>邮箱：info@shuangpaishi.com</li>
+                        <li>地址：[具体地址]</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 双牌石文化旅游网 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', function() {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
