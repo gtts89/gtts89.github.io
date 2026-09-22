@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="黑龙江信息港为您提供黑龙江本地新闻、天气查询、交通出行、政务公告及便民服务信息，是了解龙江动态的权威门户。">
+    <meta name="keywords" content="黑龙江信息港,黑龙江新闻,黑龙江天气,哈尔滨资讯,龙江便民">
+    <title>黑龙江信息港-龙江本地新闻资讯与便民服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #f39c12;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --border-color: #e1e4e8;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 4px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .header-top {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-size: 12px;
+            padding: 4px 0;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top-links a {
+            color: rgba(255,255,255,0.8);
+            margin-left: 15px;
+        }
+
+        .header-top-links a:hover {
+            color: var(--white);
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .search-bar {
+            display: flex;
+            width: 400px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-right: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .search-bar button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 20px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            height: 400px;
+        }
+
+        .hero-main {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            color: var(--white);
+        }
+
+        .hero-main::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://picsum.photos/seed/heilongjiang/800/400') center/cover;
+            opacity: 0.3;
+            mix-blend-mode: multiply;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 70%;
+        }
+
+        .hero-tag {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 2px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            opacity: 0.9;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .hero-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-card {
+            flex: 1;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .side-card h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .news-list {
+            margin-top: 10px;
+        }
+
+        .news-list li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .news-list li a {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .news-list li span.time {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .article-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            transition: box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .article-thumb {
+            width: 180px;
+            height: 120px;
+            background-color: #eee;
+            border-radius: var(--radius);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .article-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            margin-top: auto;
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .rank-list {
+            counter-reset: rank;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: baseline;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background-color: #f0f0f0;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .rank-item:nth-child(1) .rank-num { background-color: #ff4d4f; color: white; }
+        .rank-item:nth-child(2) .rank-num { background-color: #ff7a45; color: white; }
+        .rank-item:nth-child(3) .rank-num { background-color: #ffc069; color: white; }
+
+        .rank-link {
+            flex: 1;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Weather Widget */
+        .weather-widget {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .weather-main {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .weather-info {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* Services Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .service-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 20px 10px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .service-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            margin-top: auto;
+        }
+
+        .footer-main {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            color: var(--white);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-title {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding: 15px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .hero-main {
+                height: 250px;
+            }
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                order: 2;
+            }
+            .article-card {
+                flex-direction: column;
+            }
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .search-bar {
+                display: none;
+            }
+            .nav-menu {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-links">
+                <span>欢迎访问黑龙江信息港！</span>
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#">会员中心</a>
+            </div>
+            <div class="header-top-links">
+                <a href="#">设为首页</a>
+                <a href="#">收藏本站</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                黑龙江信息港
+                <span>Heilongjiang Port</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="请输入新闻关键词...">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">首页</a></li>
+                <li><a href="#" class="nav-link">龙江要闻</a></li>
+                <li><a href="#" class="nav-link">本地资讯</a></li>
+                <li><a href="#" class="nav-link">政务公开</a></li>
+                <li><a href="#" class="nav-link">生活服务</a></li>
+                <li><a href="#" class="nav-link">交通出行</a></li>
+                <li><a href="#" class="nav-link">旅游攻略</a></li>
+                <li><a href="#" class="nav-link">民生关注</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-main">
+                    <div class="hero-content">
+                        <span class="hero-tag">今日头条</span>
+                        <h2 class="hero-title">黑龙江全力推进“数字龙江”建设 打造智慧城市新标杆</h2>
+                        <p class="hero-desc">黑龙江省人民政府今日发布最新通知，旨在通过大数据、云计算等新一代信息技术，全面提升城市治理能力，改善民生服务水平，加速构建现代化经济体系。</p>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="side-card">
+                        <h3>24小时天气</h3>
+                        <div class="weather-widget">
+                            <div class="weather-main">-18°C</div>
+                            <div class="weather-info">哈尔滨 | 小雪转多云 | 风力 3-4级</div>
+                        </div>
+                    </div>
+                    <div class="side-card">
+                        <h3>热点推荐</h3>
+                        <ul class="news-list">
+                            <li><a href="#"><span>哈尔滨冰雪大世界开园首日客流破纪录</span><span class="time">10:30</span></a></li>
+                            <li><a href="#"><span>2024年春运首日黑龙江发送旅客超百万</span><span class="time">09:15</span></a></li>
+                            <li><a href="#"><span>我省启动冬季农机检修服务保障春耕</span><span class="time">08:45</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-layout">
+        <!-- Left Content -->
+        <main>
+            <!-- Latest News Section -->
+            <section class="section-box">
+                <div class="section-title">
+                    <h2>最新资讯</h2>
+                    <a href="#">查看更多 ></a>
+                </div>
+
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/politics/300/200" alt="新闻配图">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title"><a href="#">黑龙江省第十三届人民代表大会第六次会议胜利闭幕</a></h3>
+                        <p class="article-excerpt">会议审议通过了关于政府工作报告的决议等事项，选举产生了新一届省人大常委会组成人员，明确了未来一年的发展目标和重点任务。</p>
+                        <div class="article-meta">
+                            <span>政务</span>
+                            <span>2024-01-20</span>
+                            <span>评论 128</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/economy/300/200" alt="新闻配图">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title"><a href="#">自贸区哈尔滨片区创新举措助力企业高质量发展</a></h3>
+                        <p class="article-excerpt">哈尔滨自贸片区持续优化营商环境，推出一系列“放管服”改革新举措，为企业提供全生命周期的服务支持，吸引了众多外资企业入驻。</p>
+                        <div class="article-meta">
+                            <span>经济</span>
+                            <span>2024-01-19</span>
+                            <span>评论 86</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/tech/300/200" alt="新闻配图">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title"><a href="#">哈尔滨工业大学科研成果在国际顶级期刊发表</a></h3>
+                        <p class="article-excerpt">哈工大科研团队在量子计算与通信领域取得重要突破，相关研究成果发表在《自然》子刊上，为我国科技自立自强贡献了力量。</p>
+                        <div class="article-meta">
+                            <span>科教</span>
+                            <span>2024-01-19</span>
+                            <span>评论 45</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/culture/300/200" alt="新闻配图">
+                    </div>
+                    <div class="article-info">
+                        <h3 class="article-title"><a href="#">“黑土粮仓”建设成效显著 粮食产量再创新高</a></h3>
+                        <p class="article-excerpt">依托黑土地保护工程，我省粮食综合生产能力稳步提升，现代化大农业发展迈上新台阶，为国家粮食安全提供了坚实保障。</p>
+                        <div class="article-meta">
+                            <span>农业</span>
+                            <span>2024-01-18</span>
+                            <span>评论 210</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Services Section -->
+            <section class="sidebar-widget" style="margin-top: 30px;">
+                <div class="section-title">
+                    <h2>便民服务</h2>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <span class="service-icon">🔍</span>
+                        <div class="service-name">信息查询</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🚌</span>
+                        <div class="service-name">公交查询</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🎫</span>
+                        <div class="service-name">票务预订</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🏥</span>
+                        <div class="service-name">医疗挂号</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🏢</span>
+                        <div class="service-name">政务大厅</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🏠</span>
+                        <div class="service-name">房屋租售</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🎓</span>
+                        <div class="service-name">教育培训</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">📢</span>
+                        <div class="service-name">分类信息</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar">
+            <!-- Hot Rank -->
+            <div class="sidebar-widget">
+                <div class="section-title">
+                    <h2>24小时热榜</h2>
+                </div>
+                <ul class="rank-list">
+                    <li class="rank-item">
+                        <span class="rank-num">1</span>
+                        <a href="#" class="rank-link">黑龙江多地发布暴雪预警信号</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">2</span>
+                        <a href="#" class="rank-link">春节返乡最新政策解读</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">3</span>
+                        <a href="#" class="rank-link">哈尔滨地铁3号线二期开通运营</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">4</span>
+                        <a href="#" class="rank-link">全省开展安全生产大检查</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">5</span>
+                        <a href="#" class="rank-link">冰雪旅游季优惠政策汇总</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">6</span>
+                        <a href="#" class="rank-link">2024年城乡居民医保缴费标准公布</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">7</span>
+                        <a href="#" class="rank-link">我省新增多个国家级自然保护区</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">8</span>
+                        <a href="#" class="rank-link">春节假期高速公路免费通行政策</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-widget" style="padding: 0; overflow: hidden;">
+                <img src="https://picsum.photos/seed/ad/300/250" alt="广告位" style="width: 100%; display: block;">
+            </div>
+
+            <!-- Notice Board -->
+            <div class="sidebar-widget">
+                <div class="section-title">
+                    <h2>公告栏</h2>
+                </div>
+                <ul class="news-list">
+                    <li><a href="#">关于开展冬季防火安全宣传的通知</a></li>
+                    <li><a href="#">2024年度企业年报填报指南</a></li>
+                    <li><a href="#">哈尔滨市图书馆春节期间开放时间调整公告</a></li>
+                    <li><a href="#">关于加强春节期间网络信息管理的通告</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="#" class="footer-logo">黑龙江信息港</a>
+                        <p class="footer-desc">黑龙江信息港致力于打造黑龙江省内最权威、最及时、最全面的综合性门户网站。我们关注龙江发展，服务百姓生活，致力于成为连接政府与民众、城市与世界的桥梁。</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">网站栏目</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">新闻中心</a></li>
+                            <li><a href="#">政务公开</a></li>
+                            <li><a href="#">民生服务</a></li>
+                            <li><a href="#">招商引资</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">便民服务</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">交通出行</a></li>
+                            <li><a href="#">医疗健康</a></li>
+                            <li><a href="#">教育考试</a></li>
+                            <li><a href="#">社保公积金</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title">联系我们</h4>
+                        <ul class="footer-links">
+                            <li>电话：0451-12345678</li>
+                            <li>邮箱：service@hljport.com</li>
+                            <li>地址：黑龙江省哈尔滨市南岗区XX路XX号</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 黑龙江信息港 版权所有 | ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
